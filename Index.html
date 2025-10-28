@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BeautifySJ – Quick Actions</title>
+  <style>
+    :root { --bg:#0b7a5a; --pill:#248a72; --text:#143; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; color:#222; }
+    header {
+      background: linear-gradient(90deg, var(--bg), #1e8f6e);
+      color:white; padding:16px;
+      display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+    }
+    header .title { font-size: clamp(20px, 2.8vw, 32px); font-weight: 700; }
+    header img { width: 120px; height: auto; border-radius: 6px; object-fit: cover; }
+    main { max-width: 980px; margin: 24px auto; padding: 0 16px; }
+    .grid {
+      display:grid; gap:28px;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+    @media (min-width: 900px) { .grid { grid-template-columns: repeat(4, 1fr); } }
+    .card {
+      display:grid; place-items:center; text-align:center; text-decoration:none; color:inherit;
+      gap:14px; padding: 6px; /* bigger touch targets */
+    }
+    .circle {
+      width: 100%; aspect-ratio:1;
+      border-radius:50%;
+      background: var(--pill);
+      display:grid; place-items:center;
+      transition: transform .15s ease;
+      max-width: 260px; margin-inline:auto;
+    }
+    .circle svg { width: 46%; height: 46%; opacity:.9 }
+    .card:focus .circle, .card:hover .circle { transform: translateY(-2px) scale(1.02); }
+    .label { font-size: clamp(16px, 2.2vw, 22px); font-weight: 600; color: var(--text); }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://picsum.photos/seed/bsj/240/80" alt="BeautifySJ banner">
+  <div class="title">#BSJProud – Quick Actions</div>
+</header>
+
+<main>
+  <section class="grid" aria-label="Quick links">
+    <a class="card" href="https://example.com/get-involved" target="_blank" rel="noopener noreferrer">
+      <div class="circle" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+          <path d="M8 3h8l1 5-2 3v8H9V11L7 8l1-5zM9 3v5m6-5v5" />
+        </svg>
+      </div>
+      <div class="label">Get Involved</div>
+    </a>
+
+    <a class="card" href="https://example.com/illegal-dumping" target="_blank" rel="noopener noreferrer">
+      <div class="circle" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+          <path d="M3 14h16l2 4H5zM5 14l1-5h11l1 5" />
+          <circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/>
+        </svg>
+      </div>
+      <div class="label">Report Illegal Dumping</div>
+    </a>
+
+    <a class="card" href="https://example.com/graffiti" target="_blank" rel="noopener noreferrer">
+      <div class="circle" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+          <path d="M4 16l6-6 4 4-6 6H4zM14 6l2-2 4 4-2 2z" />
+        </svg>
+      </div>
+      <div class="label">Report Graffiti</div>
+    </a>
+
+    <a class="card" href="https://example.com/grants" target="_blank" rel="noopener noreferrer">
+      <div class="circle" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+          <path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8" />
+          <path d="M12 6v8l4 2" />
+        </svg>
+      </div>
+      <div class="label">Apply for BeautifySJ Grant</div>
+    </a>
+  </section>
+</main>
+
+</body>
+</html>
